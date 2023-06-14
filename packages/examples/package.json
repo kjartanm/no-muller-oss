@@ -1,0 +1,21 @@
+{
+  "name": "@no-muller-sso/examples",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kjartanm/no-muller-sso.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kjartanm/no-muller-sso/issues"
+  },
+  "homepage": "https://github.com/kjartanm/no-muller-sso#readme"
+}

@@ -1,0 +1,11 @@
+# On UNIX systems you can use `openssl rand -hex 32` or 
+# https://generate-secret.vercel.app/32 to generate a secret.
+AUTH_SECRET=949a0b9bc9866cf085c1c69374d4c48b
+AUTH_TRUST_HOST=true
+AUTH_USERNAME=person@example.com
+AUTH_PWD=thisissecret
+CALLBACK_URL=/test
+
+
+
+   

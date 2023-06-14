@@ -1,0 +1,24 @@
+{
+  "name": "no-muller-sso",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kjartanm/no-muller-sso.git"
+  },
+  "author": "https://github.com/kjartanm",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kjartanm/no-muller-sso/issues"
+  },
+  "homepage": "https://github.com/kjartanm/no-muller-sso#readme",
+  "workspaces": [
+    "packages/cf-pages-authjs",
+    "packages/examples"
+  ],
+  "dependencies": {
+    "@auth/core": "^0.8.2",
+    "vite": "^4.3.9"
+  }
+}

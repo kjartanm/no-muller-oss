@@ -1,0 +1,24 @@
+{
+  "name": "@kjartanm/cf-pages-authjs",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "type": "module",
+  "files": ["dist"],
+  "scripts": {
+    "build": "vite build",
+    "prebuild": "wrangler pages functions build --plugin --outfile tmp/index.js",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kjartanm/no-muller-sso.git"
+  },
+  "keywords": [],
+  "author": "https://github.com/kjartanm",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kjartanm/no-muller-sso/issues"
+  },
+  "homepage": "https://github.com/kjartanm/no-muller-sso#readme"
+}
