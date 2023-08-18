@@ -1,4 +1,4 @@
-import CFPagesAuth from '@no-muller-sso/cf-pages-authjs'
+import CFPagesAuth from '@kjartanm/cf-pages-authjs'
 import Credentials from "@auth/core/providers/credentials";
 
 function getAuthConfig({ env }) {
@@ -12,7 +12,7 @@ function getAuthConfig({ env }) {
                 },
                 async authorize(creds, req) {
                     if (env.AUTH_USERNAME !== creds.username || env.AUTH_PWD !== creds.password) {
-                        return false;
+                        return null;
                     }
                     const user = {
                         id: creds.username,
@@ -60,7 +60,7 @@ const addLoginComponent = createLoginMiddleware(
     ({data}) => {
         return `
         <div>${ data.session.user.email }</div>
-        <div class="cf-pages-authjs-login-link"><a href="/auth/signout">Logg ut</a></div>`
+        <div class="cf-pages-authjs-login-link"><a href="/auth/signout?callbackUrl=/test2">Logg ut</a></div>`
     }
 );
 

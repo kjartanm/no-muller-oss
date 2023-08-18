@@ -19,6 +19,7 @@
   ],
   "dependencies": {
     "@auth/core": "^0.8.2",
+    "@kjartanm/cf-pages-authjs": "^0.0.3",
     "vite": "^4.3.9"
   }
 }

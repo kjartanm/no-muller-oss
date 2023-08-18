@@ -27,7 +27,6 @@ const createLoginMiddleware = (
     return async (context) => {
         const {data, next} = context
         const response = await next()
-        console.log("session", data.session)
         const loginComponent = (data.session) ? createLogoutLink(context) : createLoginLink(context)
         const etag = (data.session) ? "loggedin" : "loggedout"
         response.headers.set("Cache-Control", "private, max-age=0, must-revalidate")
@@ -48,7 +47,7 @@ const CFPages = (authConfig) => {
         const data = await response.json();
         if (!data || !Object.keys(data).length)
             return null;
-        if (status === 200)
+        if (status === 200 || status === 302)
             return data;
         throw new Error(data.message);    
     }

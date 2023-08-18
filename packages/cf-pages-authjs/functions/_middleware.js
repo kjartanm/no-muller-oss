@@ -12,7 +12,8 @@ export const onRequest = async (context) => {
     if (!actions.includes(action) || !url.pathname.startsWith(prefix + "/")) {
         return next();
     }
-    return Auth(request, authOptions);
+    const resp = await Auth(request, authOptions);
+    return resp;
 }
 
 

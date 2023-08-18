@@ -92,7 +92,7 @@ function defaultCookies(useSecureCookies) {
 var __classPrivateFieldSet, __classPrivateFieldGet, _SessionStore_instances, _SessionStore_chunks, _SessionStore_option, _SessionStore_logger, _SessionStore_chunk, _SessionStore_clean, ALLOWED_COOKIE_SIZE, ESTIMATED_EMPTY_COOKIE_SIZE, CHUNK_SIZE, SessionStore;
 var init_cookie = __esm({
   "../../node_modules/@auth/core/lib/cookie.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     __classPrivateFieldSet = function(receiver, state2, value, kind, f3) {
       if (kind === "m")
         throw new TypeError("Private method is not writable");
@@ -203,7 +203,7 @@ var init_cookie = __esm({
 var AuthError, AdapterError, AuthorizedCallbackError, CallbackRouteError, ErrorPageLoop, EventError, InvalidCallbackUrl, InvalidEndpoints, InvalidCheck, JWTSessionError, MissingAdapter, MissingAdapterMethods, MissingAuthorize, MissingSecret, OAuthAccountNotLinked, OAuthCallbackError, OAuthProfileParseError, SessionTokenError, SignInError, SignOutError, UnknownAction, UnsupportedStrategy, UntrustedHost, Verification;
 var init_errors = __esm({
   "../../node_modules/@auth/core/errors.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     AuthError = class extends Error {
       constructor(message2, cause) {
         if (message2 instanceof Error) {
@@ -357,7 +357,7 @@ function assertConfig(request, options) {
 var warned, hasCredentials, hasEmail, emailMethods, sessionMethods;
 var init_assert = __esm({
   "../../node_modules/@auth/core/lib/assert.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_cookie();
     init_errors();
     warned = false;
@@ -387,7 +387,7 @@ var init_assert = __esm({
 var getGlobal, hkdf_default;
 var init_hkdf = __esm({
   "../../node_modules/@panva/hkdf/dist/web/runtime/hkdf.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     getGlobal = () => {
       if (typeof globalThis !== "undefined")
         return globalThis;
@@ -456,7 +456,7 @@ async function hkdf(digest2, ikm, salt, info, keylen) {
 }
 var init_web = __esm({
   "../../node_modules/@panva/hkdf/dist/web/index.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_hkdf();
   }
 });
@@ -465,7 +465,7 @@ var init_web = __esm({
 var webcrypto_default, isCryptoKey;
 var init_webcrypto = __esm({
   "../../node_modules/jose/dist/browser/runtime/webcrypto.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     webcrypto_default = crypto;
     isCryptoKey = (key) => key instanceof CryptoKey;
   }
@@ -475,7 +475,7 @@ var init_webcrypto = __esm({
 var digest, digest_default;
 var init_digest = __esm({
   "../../node_modules/jose/dist/browser/runtime/digest.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_webcrypto();
     digest = async (algorithm, data) => {
       const subtleDigest = `SHA-${algorithm.slice(-3)}`;
@@ -536,7 +536,7 @@ async function concatKdf(secret, bits, value) {
 var encoder, decoder, MAX_INT32;
 var init_buffer_utils = __esm({
   "../../node_modules/jose/dist/browser/lib/buffer_utils.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_digest();
     encoder = new TextEncoder();
     decoder = new TextDecoder();
@@ -548,7 +548,7 @@ var init_buffer_utils = __esm({
 var encodeBase64, encode, decodeBase64, decode;
 var init_base64url = __esm({
   "../../node_modules/jose/dist/browser/runtime/base64url.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_buffer_utils();
     encodeBase64 = (input) => {
       let unencoded = input;
@@ -592,7 +592,7 @@ var init_base64url = __esm({
 var JOSEError, JWTClaimValidationFailed, JWTExpired, JOSEAlgNotAllowed, JOSENotSupported, JWEDecryptionFailed, JWEInvalid, JWTInvalid;
 var init_errors2 = __esm({
   "../../node_modules/jose/dist/browser/util/errors.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     JOSEError = class extends Error {
       static get code() {
         return "ERR_JOSE_GENERIC";
@@ -680,7 +680,7 @@ var init_errors2 = __esm({
 var random_default;
 var init_random = __esm({
   "../../node_modules/jose/dist/browser/runtime/random.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_webcrypto();
     random_default = webcrypto_default.getRandomValues.bind(webcrypto_default);
   }
@@ -707,7 +707,7 @@ function bitLength(alg) {
 var iv_default;
 var init_iv = __esm({
   "../../node_modules/jose/dist/browser/lib/iv.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_errors2();
     init_random();
     iv_default = (alg) => random_default(new Uint8Array(bitLength(alg) >> 3));
@@ -718,7 +718,7 @@ var init_iv = __esm({
 var checkIvLength, check_iv_length_default;
 var init_check_iv_length = __esm({
   "../../node_modules/jose/dist/browser/lib/check_iv_length.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_errors2();
     init_iv();
     checkIvLength = (enc, iv) => {
@@ -734,7 +734,7 @@ var init_check_iv_length = __esm({
 var checkCekLength, check_cek_length_default;
 var init_check_cek_length = __esm({
   "../../node_modules/jose/dist/browser/runtime/check_cek_length.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_errors2();
     checkCekLength = (cek, expected) => {
       const actual = cek.byteLength << 3;
@@ -750,7 +750,7 @@ var init_check_cek_length = __esm({
 var timingSafeEqual, timing_safe_equal_default;
 var init_timing_safe_equal = __esm({
   "../../node_modules/jose/dist/browser/runtime/timing_safe_equal.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     timingSafeEqual = (a3, b3) => {
       if (!(a3 instanceof Uint8Array)) {
         throw new TypeError("First argument must be a buffer");
@@ -857,7 +857,7 @@ function checkEncCryptoKey(key, alg, ...usages) {
 }
 var init_crypto_key = __esm({
   "../../node_modules/jose/dist/browser/lib/crypto_key.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
   }
 });
 
@@ -888,7 +888,7 @@ function withAlg(alg, actual, ...types2) {
 var invalid_key_input_default;
 var init_invalid_key_input = __esm({
   "../../node_modules/jose/dist/browser/lib/invalid_key_input.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     invalid_key_input_default = (actual, ...types2) => {
       return message("Key must be ", actual, ...types2);
     };
@@ -899,7 +899,7 @@ var init_invalid_key_input = __esm({
 var is_key_like_default, types;
 var init_is_key_like = __esm({
   "../../node_modules/jose/dist/browser/runtime/is_key_like.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_webcrypto();
     is_key_like_default = (key) => {
       return isCryptoKey(key);
@@ -961,7 +961,7 @@ async function gcmDecrypt(enc, cek, ciphertext, iv, tag, aad) {
 var decrypt, decrypt_default;
 var init_decrypt = __esm({
   "../../node_modules/jose/dist/browser/runtime/decrypt.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_buffer_utils();
     init_check_iv_length();
     init_check_cek_length();
@@ -1001,7 +1001,7 @@ var init_decrypt = __esm({
 var inflate, deflate;
 var init_zlib = __esm({
   "../../node_modules/jose/dist/browser/runtime/zlib.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_errors2();
     inflate = async () => {
       throw new JOSENotSupported('JWE "zip" (Compression Algorithm) Header Parameter is not supported by your javascript runtime. You need to use the `inflateRaw` decrypt option to provide Inflate Raw implementation.');
@@ -1016,7 +1016,7 @@ var init_zlib = __esm({
 var isDisjoint, is_disjoint_default;
 var init_is_disjoint = __esm({
   "../../node_modules/jose/dist/browser/lib/is_disjoint.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     isDisjoint = (...headers) => {
       const sources = headers.filter(Boolean);
       if (sources.length === 0 || sources.length === 1) {
@@ -1061,7 +1061,7 @@ function isObject(input) {
 }
 var init_is_object = __esm({
   "../../node_modules/jose/dist/browser/lib/is_object.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
   }
 });
 
@@ -1069,7 +1069,7 @@ var init_is_object = __esm({
 var bogusWebCrypto, bogus_default;
 var init_bogus = __esm({
   "../../node_modules/jose/dist/browser/runtime/bogus.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     bogusWebCrypto = [
       { hash: "SHA-256", name: "HMAC" },
       true,
@@ -1098,7 +1098,7 @@ function getCryptoKey(key, alg, usage) {
 var wrap, unwrap;
 var init_aeskw = __esm({
   "../../node_modules/jose/dist/browser/runtime/aeskw.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_bogus();
     init_webcrypto();
     init_crypto_key();
@@ -1158,7 +1158,7 @@ function ecdhAllowed(key) {
 }
 var init_ecdhes = __esm({
   "../../node_modules/jose/dist/browser/runtime/ecdhes.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_buffer_utils();
     init_webcrypto();
     init_crypto_key();
@@ -1175,7 +1175,7 @@ function checkP2s(p2s2) {
 }
 var init_check_p2s = __esm({
   "../../node_modules/jose/dist/browser/lib/check_p2s.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_errors2();
   }
 });
@@ -1217,7 +1217,7 @@ async function deriveKey2(p2s2, alg, p2c, key) {
 var encrypt, decrypt2;
 var init_pbes2kw = __esm({
   "../../node_modules/jose/dist/browser/runtime/pbes2kw.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_random();
     init_buffer_utils();
     init_base64url();
@@ -1253,7 +1253,7 @@ function subtleRsaEs(alg) {
 }
 var init_subtle_rsaes = __esm({
   "../../node_modules/jose/dist/browser/runtime/subtle_rsaes.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_errors2();
   }
 });
@@ -1262,7 +1262,7 @@ var init_subtle_rsaes = __esm({
 var check_key_length_default;
 var init_check_key_length = __esm({
   "../../node_modules/jose/dist/browser/runtime/check_key_length.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     check_key_length_default = (alg, key) => {
       if (alg.startsWith("RS") || alg.startsWith("PS")) {
         const { modulusLength } = key.algorithm;
@@ -1278,7 +1278,7 @@ var init_check_key_length = __esm({
 var encrypt2, decrypt3;
 var init_rsaes = __esm({
   "../../node_modules/jose/dist/browser/runtime/rsaes.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_subtle_rsaes();
     init_bogus();
     init_webcrypto();
@@ -1340,7 +1340,7 @@ function bitLength2(alg) {
 var cek_default;
 var init_cek = __esm({
   "../../node_modules/jose/dist/browser/lib/cek.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_errors2();
     init_random();
     cek_default = (alg) => random_default(new Uint8Array(bitLength2(alg) >> 3));
@@ -1350,14 +1350,14 @@ var init_cek = __esm({
 // ../../node_modules/jose/dist/browser/lib/format_pem.js
 var init_format_pem = __esm({
   "../../node_modules/jose/dist/browser/lib/format_pem.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
   }
 });
 
 // ../../node_modules/jose/dist/browser/runtime/asn1.js
 var init_asn1 = __esm({
   "../../node_modules/jose/dist/browser/runtime/asn1.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_webcrypto();
     init_invalid_key_input();
     init_base64url();
@@ -1491,7 +1491,7 @@ function subtleMapping(jwk) {
 var parse, jwk_to_key_default;
 var init_jwk_to_key = __esm({
   "../../node_modules/jose/dist/browser/runtime/jwk_to_key.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_webcrypto();
     init_errors2();
     init_base64url();
@@ -1548,7 +1548,7 @@ async function importJWK(jwk, alg, octAsKeyObject) {
 }
 var init_import = __esm({
   "../../node_modules/jose/dist/browser/key/import.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_base64url();
     init_asn1();
     init_jwk_to_key();
@@ -1561,7 +1561,7 @@ var init_import = __esm({
 var symmetricTypeCheck, asymmetricTypeCheck, checkKeyType, check_key_type_default;
 var init_check_key_type = __esm({
   "../../node_modules/jose/dist/browser/lib/check_key_type.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_invalid_key_input();
     init_is_key_like();
     symmetricTypeCheck = (alg, key) => {
@@ -1646,7 +1646,7 @@ async function gcmEncrypt(enc, plaintext, cek, iv, aad) {
 var encrypt3, encrypt_default;
 var init_encrypt = __esm({
   "../../node_modules/jose/dist/browser/runtime/encrypt.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_buffer_utils();
     init_check_iv_length();
     init_check_cek_length();
@@ -1694,7 +1694,7 @@ async function unwrap2(alg, key, encryptedKey, iv, tag) {
 }
 var init_aesgcmkw = __esm({
   "../../node_modules/jose/dist/browser/lib/aesgcmkw.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_encrypt();
     init_decrypt();
     init_iv();
@@ -1792,7 +1792,7 @@ async function decryptKeyManagement(alg, key, encryptedKey, joseHeader, options)
 var decrypt_key_management_default;
 var init_decrypt_key_management = __esm({
   "../../node_modules/jose/dist/browser/lib/decrypt_key_management.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_aeskw();
     init_ecdhes();
     init_pbes2kw();
@@ -1840,7 +1840,7 @@ function validateCrit(Err, recognizedDefault, recognizedOption, protectedHeader,
 var validate_crit_default;
 var init_validate_crit = __esm({
   "../../node_modules/jose/dist/browser/lib/validate_crit.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_errors2();
     validate_crit_default = validateCrit;
   }
@@ -1850,7 +1850,7 @@ var init_validate_crit = __esm({
 var validateAlgorithms, validate_algorithms_default;
 var init_validate_algorithms = __esm({
   "../../node_modules/jose/dist/browser/lib/validate_algorithms.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     validateAlgorithms = (option, algorithms) => {
       if (algorithms !== void 0 && (!Array.isArray(algorithms) || algorithms.some((s3) => typeof s3 !== "string"))) {
         throw new TypeError(`"${option}" option must be an array of strings`);
@@ -1989,7 +1989,7 @@ async function flattenedDecrypt(jwe, key, options) {
 }
 var init_decrypt2 = __esm({
   "../../node_modules/jose/dist/browser/jwe/flattened/decrypt.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_base64url();
     init_decrypt();
     init_zlib();
@@ -2031,7 +2031,7 @@ async function compactDecrypt(jwe, key, options) {
 }
 var init_decrypt3 = __esm({
   "../../node_modules/jose/dist/browser/jwe/compact/decrypt.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_decrypt2();
     init_errors2();
     init_buffer_utils();
@@ -2041,7 +2041,7 @@ var init_decrypt3 = __esm({
 // ../../node_modules/jose/dist/browser/jwe/general/decrypt.js
 var init_decrypt4 = __esm({
   "../../node_modules/jose/dist/browser/jwe/general/decrypt.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_decrypt2();
     init_errors2();
     init_is_object();
@@ -2052,7 +2052,7 @@ var init_decrypt4 = __esm({
 var keyToJWK, key_to_jwk_default;
 var init_key_to_jwk = __esm({
   "../../node_modules/jose/dist/browser/runtime/key_to_jwk.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_webcrypto();
     init_invalid_key_input();
     init_base64url();
@@ -2083,7 +2083,7 @@ async function exportJWK(key) {
 }
 var init_export = __esm({
   "../../node_modules/jose/dist/browser/key/export.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_asn1();
     init_asn1();
     init_key_to_jwk();
@@ -2170,7 +2170,7 @@ async function encryptKeyManagement(alg, enc, key, providedCek, providedParamete
 var encrypt_key_management_default;
 var init_encrypt_key_management = __esm({
   "../../node_modules/jose/dist/browser/lib/encrypt_key_management.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_aeskw();
     init_ecdhes();
     init_pbes2kw();
@@ -2189,7 +2189,7 @@ var init_encrypt_key_management = __esm({
 var unprotected, FlattenedEncrypt;
 var init_encrypt2 = __esm({
   "../../node_modules/jose/dist/browser/jwe/flattened/encrypt.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_base64url();
     init_encrypt();
     init_zlib();
@@ -2364,7 +2364,7 @@ var init_encrypt2 = __esm({
 // ../../node_modules/jose/dist/browser/jwe/general/encrypt.js
 var init_encrypt3 = __esm({
   "../../node_modules/jose/dist/browser/jwe/general/encrypt.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_encrypt2();
     init_errors2();
     init_cek();
@@ -2378,7 +2378,7 @@ var init_encrypt3 = __esm({
 // ../../node_modules/jose/dist/browser/runtime/subtle_dsa.js
 var init_subtle_dsa = __esm({
   "../../node_modules/jose/dist/browser/runtime/subtle_dsa.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_errors2();
   }
 });
@@ -2386,7 +2386,7 @@ var init_subtle_dsa = __esm({
 // ../../node_modules/jose/dist/browser/runtime/get_sign_verify_key.js
 var init_get_sign_verify_key = __esm({
   "../../node_modules/jose/dist/browser/runtime/get_sign_verify_key.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_webcrypto();
     init_crypto_key();
     init_invalid_key_input();
@@ -2397,7 +2397,7 @@ var init_get_sign_verify_key = __esm({
 // ../../node_modules/jose/dist/browser/runtime/verify.js
 var init_verify = __esm({
   "../../node_modules/jose/dist/browser/runtime/verify.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_subtle_dsa();
     init_webcrypto();
     init_check_key_length();
@@ -2408,7 +2408,7 @@ var init_verify = __esm({
 // ../../node_modules/jose/dist/browser/jws/flattened/verify.js
 var init_verify2 = __esm({
   "../../node_modules/jose/dist/browser/jws/flattened/verify.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_base64url();
     init_verify();
     init_errors2();
@@ -2424,7 +2424,7 @@ var init_verify2 = __esm({
 // ../../node_modules/jose/dist/browser/jws/compact/verify.js
 var init_verify3 = __esm({
   "../../node_modules/jose/dist/browser/jws/compact/verify.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_verify2();
     init_errors2();
     init_buffer_utils();
@@ -2434,7 +2434,7 @@ var init_verify3 = __esm({
 // ../../node_modules/jose/dist/browser/jws/general/verify.js
 var init_verify4 = __esm({
   "../../node_modules/jose/dist/browser/jws/general/verify.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_verify2();
     init_errors2();
     init_is_object();
@@ -2445,7 +2445,7 @@ var init_verify4 = __esm({
 var epoch_default;
 var init_epoch = __esm({
   "../../node_modules/jose/dist/browser/lib/epoch.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     epoch_default = (date) => Math.floor(date.getTime() / 1e3);
   }
 });
@@ -2454,7 +2454,7 @@ var init_epoch = __esm({
 var minute, hour, day, week, year, REGEX, secs_default;
 var init_secs = __esm({
   "../../node_modules/jose/dist/browser/lib/secs.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     minute = 60;
     hour = minute * 60;
     day = hour * 24;
@@ -2506,7 +2506,7 @@ var init_secs = __esm({
 var normalizeTyp, checkAudiencePresence, jwt_claims_set_default;
 var init_jwt_claims_set = __esm({
   "../../node_modules/jose/dist/browser/lib/jwt_claims_set.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_errors2();
     init_buffer_utils();
     init_epoch();
@@ -2611,7 +2611,7 @@ var init_jwt_claims_set = __esm({
 // ../../node_modules/jose/dist/browser/jwt/verify.js
 var init_verify5 = __esm({
   "../../node_modules/jose/dist/browser/jwt/verify.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_verify3();
     init_jwt_claims_set();
     init_errors2();
@@ -2640,7 +2640,7 @@ async function jwtDecrypt(jwt2, key, options) {
 }
 var init_decrypt5 = __esm({
   "../../node_modules/jose/dist/browser/jwt/decrypt.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_decrypt3();
     init_jwt_claims_set();
     init_errors2();
@@ -2651,7 +2651,7 @@ var init_decrypt5 = __esm({
 var CompactEncrypt;
 var init_encrypt4 = __esm({
   "../../node_modules/jose/dist/browser/jwe/compact/encrypt.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_encrypt2();
     CompactEncrypt = class {
       constructor(plaintext) {
@@ -2684,7 +2684,7 @@ var init_encrypt4 = __esm({
 // ../../node_modules/jose/dist/browser/runtime/sign.js
 var init_sign = __esm({
   "../../node_modules/jose/dist/browser/runtime/sign.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_subtle_dsa();
     init_webcrypto();
     init_check_key_length();
@@ -2695,7 +2695,7 @@ var init_sign = __esm({
 // ../../node_modules/jose/dist/browser/jws/flattened/sign.js
 var init_sign2 = __esm({
   "../../node_modules/jose/dist/browser/jws/flattened/sign.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_base64url();
     init_sign();
     init_is_disjoint();
@@ -2709,7 +2709,7 @@ var init_sign2 = __esm({
 // ../../node_modules/jose/dist/browser/jws/compact/sign.js
 var init_sign3 = __esm({
   "../../node_modules/jose/dist/browser/jws/compact/sign.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_sign2();
   }
 });
@@ -2717,7 +2717,7 @@ var init_sign3 = __esm({
 // ../../node_modules/jose/dist/browser/jws/general/sign.js
 var init_sign4 = __esm({
   "../../node_modules/jose/dist/browser/jws/general/sign.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_sign2();
     init_errors2();
   }
@@ -2727,7 +2727,7 @@ var init_sign4 = __esm({
 var ProduceJWT;
 var init_produce = __esm({
   "../../node_modules/jose/dist/browser/jwt/produce.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_epoch();
     init_is_object();
     init_secs();
@@ -2785,7 +2785,7 @@ var init_produce = __esm({
 // ../../node_modules/jose/dist/browser/jwt/sign.js
 var init_sign5 = __esm({
   "../../node_modules/jose/dist/browser/jwt/sign.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_sign3();
     init_errors2();
     init_buffer_utils();
@@ -2797,7 +2797,7 @@ var init_sign5 = __esm({
 var EncryptJWT;
 var init_encrypt5 = __esm({
   "../../node_modules/jose/dist/browser/jwt/encrypt.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_encrypt4();
     init_buffer_utils();
     init_produce();
@@ -2872,7 +2872,7 @@ var init_encrypt5 = __esm({
 // ../../node_modules/jose/dist/browser/jwk/thumbprint.js
 var init_thumbprint = __esm({
   "../../node_modules/jose/dist/browser/jwk/thumbprint.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_digest();
     init_base64url();
     init_errors2();
@@ -2884,7 +2884,7 @@ var init_thumbprint = __esm({
 // ../../node_modules/jose/dist/browser/jwk/embedded.js
 var init_embedded = __esm({
   "../../node_modules/jose/dist/browser/jwk/embedded.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_import();
     init_is_object();
     init_errors2();
@@ -2894,7 +2894,7 @@ var init_embedded = __esm({
 // ../../node_modules/jose/dist/browser/jwks/local.js
 var init_local = __esm({
   "../../node_modules/jose/dist/browser/jwks/local.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_import();
     init_errors2();
     init_is_object();
@@ -2904,7 +2904,7 @@ var init_local = __esm({
 // ../../node_modules/jose/dist/browser/runtime/fetch_jwks.js
 var init_fetch_jwks = __esm({
   "../../node_modules/jose/dist/browser/runtime/fetch_jwks.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_errors2();
   }
 });
@@ -2912,7 +2912,7 @@ var init_fetch_jwks = __esm({
 // ../../node_modules/jose/dist/browser/jwks/remote.js
 var init_remote = __esm({
   "../../node_modules/jose/dist/browser/jwks/remote.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_fetch_jwks();
     init_errors2();
     init_local();
@@ -2922,7 +2922,7 @@ var init_remote = __esm({
 // ../../node_modules/jose/dist/browser/jwt/unsecured.js
 var init_unsecured = __esm({
   "../../node_modules/jose/dist/browser/jwt/unsecured.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_base64url();
     init_buffer_utils();
     init_errors2();
@@ -2940,7 +2940,7 @@ __export(base64url_exports2, {
 var encode2, decode2;
 var init_base64url2 = __esm({
   "../../node_modules/jose/dist/browser/util/base64url.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_base64url();
     encode2 = encode;
     decode2 = decode;
@@ -2950,7 +2950,7 @@ var init_base64url2 = __esm({
 // ../../node_modules/jose/dist/browser/util/decode_protected_header.js
 var init_decode_protected_header = __esm({
   "../../node_modules/jose/dist/browser/util/decode_protected_header.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_base64url2();
     init_buffer_utils();
     init_is_object();
@@ -2960,7 +2960,7 @@ var init_decode_protected_header = __esm({
 // ../../node_modules/jose/dist/browser/util/decode_jwt.js
 var init_decode_jwt = __esm({
   "../../node_modules/jose/dist/browser/util/decode_jwt.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_base64url2();
     init_buffer_utils();
     init_is_object();
@@ -2971,7 +2971,7 @@ var init_decode_jwt = __esm({
 // ../../node_modules/jose/dist/browser/runtime/generate.js
 var init_generate = __esm({
   "../../node_modules/jose/dist/browser/runtime/generate.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_webcrypto();
     init_errors2();
     init_random();
@@ -2981,7 +2981,7 @@ var init_generate = __esm({
 // ../../node_modules/jose/dist/browser/key/generate_key_pair.js
 var init_generate_key_pair = __esm({
   "../../node_modules/jose/dist/browser/key/generate_key_pair.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_generate();
   }
 });
@@ -2989,7 +2989,7 @@ var init_generate_key_pair = __esm({
 // ../../node_modules/jose/dist/browser/key/generate_secret.js
 var init_generate_secret = __esm({
   "../../node_modules/jose/dist/browser/key/generate_secret.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_generate();
   }
 });
@@ -2997,7 +2997,7 @@ var init_generate_secret = __esm({
 // ../../node_modules/jose/dist/browser/index.js
 var init_browser = __esm({
   "../../node_modules/jose/dist/browser/index.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_decrypt3();
     init_decrypt2();
     init_decrypt4();
@@ -3052,7 +3052,7 @@ async function getDerivedEncryptionKey(secret) {
 var DEFAULT_MAX_AGE, now;
 var init_jwt = __esm({
   "../../node_modules/@auth/core/jwt.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_web();
     init_browser();
     init_cookie();
@@ -3084,7 +3084,7 @@ async function createCallbackUrl({ options, paramValue, cookieValue }) {
 }
 var init_callback_url = __esm({
   "../../node_modules/@auth/core/lib/callback-url.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
   }
 });
 
@@ -3092,7 +3092,7 @@ var init_callback_url = __esm({
 var require_cookie = __commonJS({
   "../../node_modules/cookie/index.js"(exports) {
     "use strict";
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     exports.parse = parse3;
     exports.serialize = serialize2;
     var __toString = Object.prototype.toString;
@@ -3310,7 +3310,7 @@ function randomString(size) {
 var import_cookie3, actions;
 var init_web2 = __esm({
   "../../node_modules/@auth/core/lib/web.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     import_cookie3 = __toESM(require_cookie(), 1);
     init_errors();
     actions = [
@@ -3343,7 +3343,7 @@ async function createCSRFToken({ options, cookieValue, isPost, bodyValue }) {
 }
 var init_csrf_token = __esm({
   "../../node_modules/@auth/core/lib/csrf-token.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_web2();
   }
 });
@@ -3352,7 +3352,7 @@ var init_csrf_token = __esm({
 var defaultCallbacks;
 var init_default_callbacks = __esm({
   "../../node_modules/@auth/core/lib/default-callbacks.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     defaultCallbacks = {
       signIn() {
         return true;
@@ -3397,7 +3397,7 @@ function merge(target, ...sources) {
 }
 var init_merge = __esm({
   "../../node_modules/@auth/core/lib/utils/merge.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
   }
 });
 
@@ -3473,7 +3473,7 @@ function normalizeEndpoint(e2, issuer) {
 var defaultProfile, defaultAccount;
 var init_providers = __esm({
   "../../node_modules/@auth/core/lib/providers.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_errors();
     init_merge();
     defaultProfile = (profile) => {
@@ -3516,7 +3516,7 @@ function setLogger(newLogger = {}, debug) {
 var red, yellow, grey, reset, logger;
 var init_logger = __esm({
   "../../node_modules/@auth/core/lib/utils/logger.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     red = "\x1B[31m";
     yellow = "\x1B[33m";
     grey = "\x1B[90m";
@@ -3563,7 +3563,7 @@ function parseUrl(url) {
 }
 var init_parse_url = __esm({
   "../../node_modules/@auth/core/lib/utils/parse-url.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
   }
 });
 
@@ -3691,7 +3691,7 @@ function adapterErrorHandler(adapter, logger2) {
 }
 var init_init = __esm({
   "../../node_modules/@auth/core/lib/init.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_jwt();
     init_callback_url();
     init_cookie();
@@ -3953,7 +3953,7 @@ function O(n3, l3, u3) {
 var n, l, u, i, t, o, r, f, e, c;
 var init_preact_module = __esm({
   "../../node_modules/preact/dist/preact.module.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     f = {};
     e = [];
     c = /acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|itera/i;
@@ -4245,7 +4245,7 @@ function j2(r3, i3, a3, s3) {
 var r2, n2, o2, i2, a2, s2, f2, c2, u2, g2, m2, b2, x, C2, O2;
 var init_dist = __esm({
   "../../node_modules/preact-render-to-string/dist/index.mjs"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_preact_module();
     r2 = /acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|^--/i;
     n2 = /^(area|base|br|col|embed|hr|img|input|link|meta|param|source|track|wbr)$/;
@@ -4287,7 +4287,7 @@ function o3(o4, e2, n3, t2, f3) {
 var _3;
 var init_jsxRuntime_module = __esm({
   "../../node_modules/preact/jsx-runtime/dist/jsxRuntime.module.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_preact_module();
     init_preact_module();
     _3 = 0;
@@ -4335,7 +4335,7 @@ function ErrorPage(props) {
 }
 var init_error = __esm({
   "../../node_modules/@auth/core/lib/pages/error.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_jsxRuntime_module();
   }
 });
@@ -4372,7 +4372,7 @@ function SigninPage(props) {
 var signinErrors;
 var init_signin = __esm({
   "../../node_modules/@auth/core/lib/pages/signin.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_jsxRuntime_module();
     signinErrors = {
       default: "Unable to sign in.",
@@ -4409,7 +4409,7 @@ function SignoutPage(props) {
 }
 var init_signout = __esm({
   "../../node_modules/@auth/core/lib/pages/signout.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_jsxRuntime_module();
   }
 });
@@ -4418,7 +4418,7 @@ var init_signout = __esm({
 var styles_default;
 var init_styles = __esm({
   "../../node_modules/@auth/core/lib/pages/styles.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     styles_default = `:root {
   --border-width: 1px;
   --border-radius: 0.5rem;
@@ -4744,7 +4744,7 @@ function VerifyRequestPage(props) {
 }
 var init_verify_request = __esm({
   "../../node_modules/@auth/core/lib/pages/verify-request.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_jsxRuntime_module();
   }
 });
@@ -4809,7 +4809,7 @@ function renderPage(params) {
 }
 var init_pages = __esm({
   "../../node_modules/@auth/core/lib/pages/index.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_dist();
     init_error();
     init_signin();
@@ -4825,7 +4825,7 @@ function fromDate(time, date = Date.now()) {
 }
 var init_date = __esm({
   "../../node_modules/@auth/core/lib/utils/date.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
   }
 });
 
@@ -4936,7 +4936,7 @@ async function handleLogin(sessionToken, _profile, _account, options) {
 }
 var init_callback_handler = __esm({
   "../../node_modules/@auth/core/lib/callback-handler.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_errors();
     init_date();
   }
@@ -5867,7 +5867,7 @@ function validateAuthResponse(as, client, parameters, expectedState) {
 var USER_AGENT, clockSkew, clockTolerance, encoder2, decoder2, CHUNK_SIZE2, LRU, UnsupportedOperationError, OperationProcessingError, OPE, dpopNonces, jwkCache, SPLIT_REGEXP, SCHEMES_REGEXP, skipSubjectCheck, idTokenClaims, branded, claimNames, expectNoNonce, skipAuthTimeCheck, noSignatureCheck, skipStateCheck, expectNoState;
 var init_build = __esm({
   "../../node_modules/oauth4webapi/build/index.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     if (typeof navigator === "undefined" || !navigator.userAgent?.startsWith?.("Mozilla/5.0 ")) {
       const NAME = "oauth4webapi";
       const VERSION = "v2.3.0";
@@ -5984,7 +5984,7 @@ function decodeState(value) {
 var PKCE_MAX_AGE, pkce, STATE_MAX_AGE, state, NONCE_MAX_AGE, nonce;
 var init_checks = __esm({
   "../../node_modules/@auth/core/lib/oauth/checks.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_browser();
     init_build();
     init_errors();
@@ -6202,7 +6202,7 @@ async function getUserAndAccount(OAuthProfile, provider, tokens, logger2) {
 }
 var init_callback = __esm({
   "../../node_modules/@auth/core/lib/oauth/callback.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_checks();
     init_build();
     init_errors();
@@ -6227,7 +6227,7 @@ function handleState(query, provider, isOnRedirectProxy) {
 }
 var init_handle_state = __esm({
   "../../node_modules/@auth/core/lib/oauth/handle-state.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_errors();
     init_checks();
   }
@@ -6253,7 +6253,7 @@ async function handleAuthorized(params, { url, logger: logger2, callbacks: { sig
 }
 var init_shared = __esm({
   "../../node_modules/@auth/core/lib/routes/shared.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_errors();
   }
 });
@@ -6492,7 +6492,7 @@ async function callback(params) {
 }
 var init_callback2 = __esm({
   "../../node_modules/@auth/core/lib/routes/callback.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_errors();
     init_callback_handler();
     init_callback();
@@ -6514,7 +6514,7 @@ function providers(providers2) {
 }
 var init_providers2 = __esm({
   "../../node_modules/@auth/core/lib/routes/providers.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
   }
 });
 
@@ -6613,7 +6613,7 @@ async function session(params) {
 }
 var init_session = __esm({
   "../../node_modules/@auth/core/lib/routes/session.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_errors();
     init_date();
   }
@@ -6650,7 +6650,7 @@ async function email(identifier, options) {
 }
 var init_signin2 = __esm({
   "../../node_modules/@auth/core/lib/email/signin.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_web2();
   }
 });
@@ -6715,7 +6715,7 @@ async function getAuthorizationUrl(query, options) {
 }
 var init_authorization_url = __esm({
   "../../node_modules/@auth/core/lib/oauth/authorization-url.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_checks();
     init_build();
   }
@@ -6766,7 +6766,7 @@ function defaultNormalizer(email2) {
 }
 var init_signin3 = __esm({
   "../../node_modules/@auth/core/lib/routes/signin.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_signin2();
     init_errors();
     init_authorization_url();
@@ -6795,7 +6795,7 @@ async function signout(sessionStore, options) {
 }
 var init_signout2 = __esm({
   "../../node_modules/@auth/core/lib/routes/signout.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_errors();
   }
 });
@@ -6803,7 +6803,7 @@ var init_signout2 = __esm({
 // ../../node_modules/@auth/core/lib/routes/index.js
 var init_routes = __esm({
   "../../node_modules/@auth/core/lib/routes/index.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_callback2();
     init_providers2();
     init_session();
@@ -6968,7 +6968,7 @@ async function AuthInternal(request, authOptions) {
 var skipCSRFCheck;
 var init_lib = __esm({
   "../../node_modules/@auth/core/lib/index.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_errors();
     init_cookie();
     init_init();
@@ -7024,7 +7024,7 @@ async function Auth(request, config) {
 }
 var init_core = __esm({
   "../../node_modules/@auth/core/index.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_assert();
     init_errors();
     init_lib();
@@ -7038,7 +7038,7 @@ var init_core = __esm({
 var actions2, getAuthOptions;
 var init_auth = __esm({
   "src/auth.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     actions2 = [
       "providers",
       "session",
@@ -7062,7 +7062,7 @@ var init_auth = __esm({
 var onRequest;
 var init_middleware = __esm({
   "functions/_middleware.js"() {
-    init_functionsRoutes_0_3809212707528242();
+    init_functionsRoutes_0_8725868336752034();
     init_core();
     init_auth();
     onRequest = async (context) => {
@@ -7074,15 +7074,16 @@ var init_middleware = __esm({
       if (!actions2.includes(action) || !url.pathname.startsWith(prefix + "/")) {
         return next();
       }
-      return Auth(request, authOptions);
+      const resp = await Auth(request, authOptions);
+      return resp;
     };
   }
 });
 
-// ../../../../../../../../tmp/functionsRoutes-0.3809212707528242.mjs
+// ../../../../../../../../tmp/functionsRoutes-0.8725868336752034.mjs
 var routes;
-var init_functionsRoutes_0_3809212707528242 = __esm({
-  "../../../../../../../../tmp/functionsRoutes-0.3809212707528242.mjs"() {
+var init_functionsRoutes_0_8725868336752034 = __esm({
+  "../../../../../../../../tmp/functionsRoutes-0.8725868336752034.mjs"() {
     init_middleware();
     routes = [
       {
@@ -7097,10 +7098,10 @@ var init_functionsRoutes_0_3809212707528242 = __esm({
 });
 
 // ../../../../../../../../home/kjartanm/.nvm/versions/node/v16.18.0/lib/node_modules/wrangler/templates/pages-template-plugin.ts
-init_functionsRoutes_0_3809212707528242();
+init_functionsRoutes_0_8725868336752034();
 
 // ../../../../../../../../home/kjartanm/.nvm/versions/node/v16.18.0/lib/node_modules/wrangler/node_modules/path-to-regexp/dist.es2015/index.js
-init_functionsRoutes_0_3809212707528242();
+init_functionsRoutes_0_8725868336752034();
 function lexer(str) {
   var tokens = [];
   var i3 = 0;
