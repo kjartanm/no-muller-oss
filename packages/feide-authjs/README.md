@@ -11,7 +11,7 @@ This adds Feide (https://www.feide.no/) to the list of providers for Authjs (htt
 ### Callback URL
 
 ```
-https://example.com/api/auth/callback/github
+https://example.com/api/auth/callback/feide
 ```
 
 ### Configuration
