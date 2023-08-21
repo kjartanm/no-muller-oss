@@ -18,10 +18,10 @@ export class AddInnerContent {
 
 const createLoginMiddleware = ( 
         createLoginLink = (data) => {
-            return `<div class="cf-pages-authjs-login-link"><a href="/auth/signin">Log in</a></div>`
+            return `<a class="cf-pages-authjs-login-link" href="/auth/signin">Log in</a>`
         },
         createLogoutLink = (data) => {
-            return `<div class="cf-pages-authjs-login-link"><a href="/auth/signout">Log out</a></div>`
+            return `<a class="cf-pages-authjs-login-link" href="/auth/signout">Log out</a>`
         }
     ) => {
     return async (context) => {
@@ -44,14 +44,23 @@ const CFPages = (authConfig) => {
         const sessionRequest = new Request(url, { headers: request.headers });
         const response = await Auth(sessionRequest, authOptions);
         const { status = 200 } = response;
-        const data = await response.json();
-        if (!data || !Object.keys(data).length)
+        const session = await response.json();
+        if (!session || !Object.keys(session).length){
             return null;
-        if (status === 200 || status === 302)
-            return data;
-        throw new Error(data.message);    
+        }
+        if (status === 200 || status === 302){
+            return session;
+        }
+        throw new Error(session.message);    
     }
-    return {authPlugin, getSession, createLoginMiddleware};
+    const setSession = async (context) => {
+        const session = await getSession(context);
+        if(session){
+            context.data.session = session;
+        }
+        return context.next();
+    }
+    return {authPlugin, getSession, setSession, createLoginMiddleware};
 }
 
 export default CFPages;

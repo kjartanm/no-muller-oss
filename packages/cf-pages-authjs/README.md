@@ -29,19 +29,22 @@ const { authPlugin } = CFPagesAuth(
         return { providers: [GitHub({ clientId: env.GITHUB_ID, clientSecret: env.GITHUB_SECRET })],}
 });
 ```
-The plugin also exports additional middleware that can be used. `getSession`can be used to get session info, and this again can be used for authorizing different routes:
+The plugin also exports additional methods and middleware that can be used. `getSession`can be used to get session info, `setSession` adds session object to context.data, and this again can be used for authorizing different routes:
 
 ```
 # functions/_middleware.js
 
-const {authPlugin, getSession} = CFPagesAuth(authConfig);
+const {authPlugin, setSession } = CFPagesAuth(authConfig);
 
-const setSession = async (context) => {
-    context.data.session = await getSession(context);
+const doSomethingWithSession = async (context) => {
+    const session = await getSession(context);
+
+    ...
+
     return context.next();
 }
-  
-export const onRequest = [authPlugin, setSession];
+
+export const onRequest = [authPlugin, doSomethingWithSession, setSession];
 
 #####
 
@@ -50,17 +53,17 @@ export const onRequest = [authPlugin, setSession];
 const protectRoute = async ({ next, data }) => {
     if (!data.session) {
         return new Response("No access", { status: 401 })
-        }
+    }
     return next();
 }
 
-export const onRequest = [protectRoute, ];
+export const onRequest = [protectRoute];
 ```
 
 It also exports middleware to add login-form to your app based on HTMLWriter (it reqires that `data.session` is set). 
 
 ```
-const { authPlugin, getSession, createLoginMiddleware } = CFPagesAuth(getAuthConfig);
+const { authPlugin, setSession, createLoginMiddleware } = CFPagesAuth(getAuthConfig);
 
 
 const addLoginComponent = createLoginMiddleware(

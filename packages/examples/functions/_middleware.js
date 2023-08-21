@@ -43,15 +43,7 @@ function getAuthConfig({ env }) {
         },
     }
 }
-const { authPlugin, getSession, createLoginMiddleware } = CFPagesAuth(getAuthConfig);
-
-const setSession = async (context) => {
-    const session = await getSession(context);
-    if (session) {
-        context.data.session = session;
-    }
-    return context.next();
-}
+const { authPlugin, setSession, createLoginMiddleware } = CFPagesAuth(getAuthConfig);
 
 const addLoginComponent = createLoginMiddleware(
     ({env}) => {
