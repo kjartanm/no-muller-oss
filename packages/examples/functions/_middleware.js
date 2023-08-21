@@ -1,4 +1,5 @@
 import CFPagesAuth from '@kjartanm/cf-pages-authjs'
+import Feide from '@kjartanm/feide-authjs'
 import Credentials from "@auth/core/providers/credentials";
 
 function getAuthConfig({ env }) {
@@ -21,7 +22,12 @@ function getAuthConfig({ env }) {
                     }
                     return user
                 }
-            })
+            }),
+            Feide({
+                clientId: env.FEIDE_ID,
+                clientSecret: env.FEIDE_SECRET,
+            }),
+        
         ],
         trustHost: true,
         session: {

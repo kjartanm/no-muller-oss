@@ -15,11 +15,13 @@
   "homepage": "https://github.com/kjartanm/no-muller-sso#readme",
   "workspaces": [
     "packages/cf-pages-authjs",
+    "packages/feide-authjs",
     "packages/examples"
   ],
   "dependencies": {
     "@auth/core": "^0.8.2",
     "@kjartanm/cf-pages-authjs": "^0.0.4",
+    "@kjartanm/feide-authjs": "^0.0.1",
     "vite": "^4.3.9"
   }
 }
