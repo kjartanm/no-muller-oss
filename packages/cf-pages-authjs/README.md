@@ -34,7 +34,7 @@ The plugin also exports additional methods and middleware that can be used. `get
 ```
 # functions/_middleware.js
 
-const {authPlugin, setSession } = CFPagesAuth(authConfig);
+const {authPlugin, getSession, setSession } = CFPagesAuth(authConfig);
 
 const doSomethingWithSession = async (context) => {
     const session = await getSession(context);

@@ -1,6 +1,6 @@
 {
   "name": "@kjartanm/cf-pages-authjs",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "",
   "main": "dist/index.js",
   "type": "module",
@@ -12,13 +12,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kjartanm/no-muller-sso.git"
+    "url": "git+https://github.com/kjartanm/no-muller-oss.git"
   },
   "keywords": [],
   "author": "https://github.com/kjartanm",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kjartanm/no-muller-sso/issues"
+    "url": "https://github.com/kjartanm/no-muller-oss/issues"
   },
-  "homepage": "https://github.com/kjartanm/no-muller-sso#readme"
+  "homepage": "https://github.com/kjartanm/no-muller-oss#readme"
 }
